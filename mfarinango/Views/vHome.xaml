@@ -7,11 +7,13 @@
         Padding="15"
         Spacing="15">
         
-        <Label x:Name="lblUsuario" HorizontalTextAlignment =" End"
-               FontSize="15"/>
-        <Label 
+        <Label x:Name="lblUsuario"
+               HorizontalTextAlignment="End"
+               FontSize="14"/>
+        <Label
             Text="Ventana Principal"
+            FontSize="20"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -3,58 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mfarinango.Views.vlogin"
              Title="vlogin">
-    <VerticalStackLayout
-        Padding="20"
-        Spacing="15">
-        <Label 
-            Text="Inicio de Sesion"
-            FontSize="20"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-          <!--Imagenes-->
-        <Image Source="https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-127001787.jpg" 
-                   HeightRequest="100"
-                   WidthRequest="250"
-                   HorizontalOptions="Center" />
-        <Grid>
-            <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-                </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Text="Usuario" 
-                   FontSize="18"
-                   Grid.Row="0" Grid.Column="0"/>
-            <Entry x:Name="txtUsuario"
-                   Placeholder="Ingresa usuario"
-                   Grid.Row="0" Grid.Column="1"
-                   ></Entry>
-            <Label Text="Contraseña" 
-        FontSize="18"
-        Grid.Row="1" Grid.Column="0"/>
-            <Entry x:Name="txtContrasena"
-        Placeholder="Ingresa contraseña"
-        IsPassword="True"
-        Grid.Row="1" Grid.Column="1"
-        ></Entry>
-            <Button x:Name="btnIniciarSesion"
-                    Text="Inicar Sesion"
-                    Clicked="btnIniciarSesion_Clicked"
-                    Grid.Row="2"
-                    Grid.Column="0"/>
-            <Button x:Name="btnRegistrarUsuario"
-         Text="Registrarse"
-         Clicked="btnRegistrarUsuario_Clicked"
-         Grid.Row="2"
-         Grid.Column="1"/>
+<ContentPage.Resources>
+    <Style x:Key="styleLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="BackgroundColor" Value="DarkViolet"/>
+        <Setter Property="TextColor" Value="Blue"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+    </Style>
 
+    <Style x:Key="styleEntry" TargetType="Entry">
+        <Setter Property="Background" Value="Beige"/>
+        <Setter Property="TextColor" Value="Blue"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+</ContentPage.Resources>
 
-        </Grid>
-            
-    </VerticalStackLayout>
+<VerticalStackLayout
+    Padding="20"
+    Spacing="15"
+    BackgroundColor="Yellow">
+    <Label
+        Text="Inicio de Sesion"
+        FontSize="20"
+        VerticalOptions="Center"
+        HorizontalOptions="Center" />
+
+    <!--Imagenes-->
+    <Image Source="https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-127001787.jpg"
+           HeightRequest="100"
+           WidthRequest="250"
+           HorizontalOptions="Center" />
+    <Grid
+        RowSpacing="10"
+        ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Usuario"
+               Style="{StaticResource styleLabel}"
+               Grid.Row="0"
+               Grid.Column="0"/>
+        <Entry x:Name="txtUsuario"
+               Placeholder="Ingresa usuario"
+               Style="{StaticResource styleEntry}"
+               Grid.Row="0"
+               Grid.Column="1"/>
+        <Label Text="Contraseña"
+               Style="{StaticResource styleLabel}"
+               Grid.Row="1"
+               Grid.Column="0"/>
+        <Entry x:Name="txtContrasena"
+               Placeholder="Ingresa contraseña"
+               IsPassword="True"
+               Style="{StaticResource styleEntry}"
+               Grid.Row="1"
+               Grid.Column="1"/>
+        <Button x:Name="btnIniciarSesion"
+                Style="{StaticResource BotonGlobal}"
+                Text="Inicar Sesion"
+                Clicked="btnIniciarSesion_Clicked"
+                Grid.Row="2"
+                Grid.Column="0"/>
+        <Button x:Name="btnRegistrarUsuario"
+                Style="{StaticResource BotonGlobal}"
+                Text="Registrarse"
+                Clicked="btnRegistrarUsuario_Clicked"
+                Grid.Row="2"
+                Grid.Column="1"/>
+    </Grid>
+</VerticalStackLayout>
 </ContentPage>

@@ -3,46 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mfarinango.Views.vRegistro"
              Title="vRegistro">
-    <VerticalStackLayout
-        Padding="15"
-        Spacing="15">
-        
-        <Label 
-            Text="Registrar Usuario"
-            FontSize="20"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry x:Name="txtUsuarioNuevo"
-               Placeholder="Ingresa ususario"
-               />
+<ContentPage.Resources>
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Maroon"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Red"/>
+    </Style>
+</ContentPage.Resources>
+
+<VerticalStackLayout
+    Padding="15"
+    Spacing="15">
+
+    <Label
+        Text="Registrar Usuario"
+        FontSize="20"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"/>
+    <Entry x:Name="txtUsuarioNuevo"
+           Placeholder="Ingresa ususario"
+           />
         <Entry x:Name="txtContrasena"
          Placeholder="Ingresa contrasena"
          />
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
- 
-            </Grid.RowDefinitions>
+        <Grid ColumnSpacing="15">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-           
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             <Button x:Name="btnGuardarUsuario"
                     Text="Guardar Usuario"
+                    Style="{StaticResource BotonGlobal}"
                     Clicked="btnGuardarUsuario_Clicked"
                     Grid.Row="0"
                     Grid.Column="0"/>
-
             <Button x:Name="btnCancelar"
-         Text="Cancelar"
-         Clicked="btnCancelar_Clicked"
-         Grid.Row="0"
-         Grid.Column="1"/>
-
+                    Text="Cancelar"
+                    Clicked="btnCancelar_Clicked"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
         </Grid>
-
-
     </VerticalStackLayout>
 </ContentPage>
